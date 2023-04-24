@@ -1,0 +1,37 @@
+<wxs src='../../tools.wxs'  module="tools"></wxs>
+<view class="container">
+  <view class="inpts">
+    <view>
+        <text>姓名</text>
+        <input disabled type="text" value="{{user_info.userName}}"  />
+    </view>
+    <view>
+        <text>手机号</text>
+        <input type="text" disabled value="{{user_info.phone}}"  />
+    </view>
+    <view>
+        <text >企业名称</text>
+        <input type="text" disabled value="{{user_info.enterpriseName}}"  />
+    </view>
+    <view>
+        <text>部门</text>
+        <input disabled  value="{{user_info.departmentName}}"  />
+    </view>
+    <view>
+        <text>工号</text>
+        <input disabled  value="{{user_info.jobNo}}"  />
+    </view>
+    <view>
+        <text>邮箱</text>
+        <input disabled  value="{{user_info.email}}" />
+    </view>
+    <view>
+        <text>身份证号</text>
+        <input disabled  value="{{user_info.idNumber}}" />
+    </view>
+  </view>
+ <view class="wh" style="margin-top: 20rpx;">若个人信息有误，请联系管理员修改</view>
+  <!-- <view class="btn">
+      <view class="wh" style="background:#5FACF0 ;" bindtap="back">返回</view>
+  </view> -->
+</view>

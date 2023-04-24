@@ -1,0 +1,34 @@
+.msg {
+  text-align: center;
+}
+.msg image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  margin: 30rpx 0;
+}
+.msg text {
+  font-size: 40rpx;
+}
+.btn {
+  margin: 100rpx 0;
+}
+.btn > view {
+  height: 88rpx;
+  background: #0070C0;
+  border-radius: 10rpx;
+  line-height: 88rpx;
+  color: #ffffff  ;
+  text-align: center;
+}
+.edit > view {
+  display: flex;
+  justify-content: space-between;
+  margin: 10rpx 0;
+  align-items: center;
+}
+.edit > view > input {
+  width: 80%;
+  padding: 20rpx 10rpx;
+  background: #F5F5F5;
+}

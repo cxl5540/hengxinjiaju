@@ -1,0 +1,59 @@
+<wxs src='../../tools.wxs' module="tools"></wxs>
+
+<view class="tab-content wh">
+<view style="text-align: center;" wx:if="{{question_info.vip_pic}}">
+  <image src="{{tools.img_online+question_info.vip_pic}}" style="max-width: 100%;"></image>
+</view>
+
+  <view class="edit">
+    <view>
+      <text>姓名：</text>
+      <input  disabled value="{{question_info.name}}"/>
+    </view>
+    <view>
+      <text>手机：</text>
+      <input disabled value="{{question_info.tel}}"  />
+    </view>
+    <!-- <view>
+      <text>交易金额：</text>
+      <input disabled value="￥{{question_info.sell_money}}"  />
+    </view> -->
+    <view>
+      <text>销售人：</text>
+      <input  disabled value="{{question_info.salesperson?question_info.salesperson:'无'}}"  />
+    </view>
+    <view>
+      <text>销售时间：</text>
+      <input  disabled value="{{question_info.salesperson_time}}"  />
+    </view>
+    <view>
+      <text>地址：</text>
+      <input bindinput="inputWacth"  value="{{question_info.address}}" disabled />
+    </view>
+  </view>
+  <view>
+    <view>上传图片(必须上传3张)：</view>
+    <!-- <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" bind:delete="delImg" /> -->
+  </view>
+  <view class="addImage" >
+      <van-uploader 
+      file-list="{{ fileList }}" 
+      accept="image" 
+      max-count="3" 
+      multiple
+      bind:after-read="afterRead" 
+      bind:delete="delImg" 
+      bind:before-read="beforeRead"
+      deletable="{{ true }}"
+      preview-size="{{(width+50)/4 }}" />
+</view>
+
+
+  <view>
+    <view style="margin: 20rpx 0;">请填写问题描述，我们会尽快回复：</view>
+    <textarea bindinput="inputWacth" value="{{formData.content}}" data-model="content" cols="30" rows="10" placeholder="请简单填写您的问题描述..."></textarea>
+  </view>
+  <view class="btn">
+    <view  bindtap="submit">提交</view>
+  </view>
+</view>

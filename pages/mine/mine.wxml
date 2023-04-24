@@ -1,0 +1,53 @@
+<wxs src='../../tools.wxs'  module="tools"></wxs>
+<view class="container  wh">
+  <view class="userinfo" >
+    <block wx:if="{{canIUseOpenData}}">
+        <view>
+          <view class="userinfo-avatar" bindtap="getuser">
+              <view wx:if="{{!uid}}" bindtap="getUserProfile" style="width: 100%;height: 100%;background:#fff;color: #333;line-height: 128rpx;text-align: center;"><image style="width: 100%;height: 100%;" src="../../image/tx.png"></image></view>
+              <view wx:if="{{uid}}" style="width: 100%;height: 100%;background:#fff;color: #333;line-height: 128rpx;text-align: center;"><image style="width: 100%;height: 100%;" src="{{user_info.head_path}}"></image></view>
+              <open-data type="userAvatarUrl"></open-data>            
+          </view>
+        </view>    
+      <view class="msg">
+          <view class="bold">{{user_info.name?user_info.name:'点击头像授权'}}</view>
+          <view wx:if="{{uid}}"><text>{{user_info.tel?user_info.tel:'点击一键售后手机号码授权'}}</text></view>
+      </view> 
+      <!-- <view wx:if="{{uid}}" class="coupon_btn" bindtap="getcoupon">优惠券兑换</view> -->
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view>
+<view class="num wh">
+    <view >
+      <text style="font-size:24rpx">积分</text>
+      <view  bindtap="jf_list"><text class="bold">{{user_info.integral?user_info.integral:'0'}}</text></view>
+    </view>
+    <view>
+      <text style="font-size:24rpx">优惠券</text>
+      <view  bindtap="coupon"><text class="bold">{{user_info.coupon_count?user_info.coupon_count:'0'}}</text></view>
+    </view>
+</view>
+<view class="nume wh" style="position: relative;">
+    <view class="i_t flex" wx:for="{{list}}" wx:key="index"  bindtap="navurl" data-index="{{index}}" data-url="{{item.url}}" style="position: relative;" >
+      <image src="{{tools.img+item.img_u}}"></image>
+      <view>
+          <view>{{item.ti}}</view>
+          <text>{{item.del}}</text>
+      </view>
+      <button style="position: absolute;top: 0;left: 0;height: 100%;width: 100%;background:transparent;" wx:if="{{index==6}}" open-type="contact"></button>
+      <button style="position: absolute;top: 0;left: 0;height: 100%;width: 100%;background:transparent;" wx:if="{{index==7}}" open-type="share"></button>
+      <mp-icon icon="arrow" color="#999999" size="{{15}}"></mp-icon>
+    </view>
+    <button class="msg"  bindtap="getUserProfile"  wx:if="{{!uid}}">授权</button>
+    <!-- <button bindchooseavatar="getUserProfile" open-type="chooseAvatar"  class="msg"    wx:if="{{!uid}}">授权</button> -->
+    <button class="tel" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:if="{{!tel}}">手机</button>   
+</view>

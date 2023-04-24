@@ -1,0 +1,16 @@
+var img_url='../../image/';
+var img_online='https://hxjjht.zxhxjjdzg.com/';
+var getstr=function(str,num) {
+  if(str!=undefined){
+		var length=str.length;
+		if(length>num){
+			str=str.substring(0,num)+'...'
+    }
+		return str;
+	}
+}
+module.exports = {
+  img: img_url,
+  getstr:getstr,
+  img_online:img_online
+};

@@ -1,0 +1,96 @@
+.nav {
+  height: 120rpx;
+  width: 100%;
+  position: relative;
+  margin: 20rpx 0;
+  text-align: center;
+}
+.nav > image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120rpx;
+}
+.nav > text {
+  position: relative;
+  top: 30rpx;
+  font-size: 38rpx;
+  color: #ffffff;
+}
+.active {
+  color: #3FB5A2;
+  border-bottom: 2px solid #3FB5A2;
+}
+.container > .hed > view {
+  display: flex;
+  justify-content: space-between;
+}
+.container > .hed > .search {
+  height: 72rpx;
+  margin-top: 30rpx;
+}
+.container > .hed > .search > view {
+  background-color: rgba(47, 140, 125, 0.1);
+  flex: 1;
+}
+.container > .hed > .search > view:nth-child(2) {
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+}
+.container > .hed > .search > view {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.container > .hed > .search > view image {
+  width: 18rpx;
+  height: 10rpx;
+  vertical-align: middle;
+}
+.container > .list .checkStatus {
+  display: inline-block;
+  height: 30rpx;
+  line-height: 30rpx;
+  padding: 8rpx 0;
+  font-size: 24rpx;
+  float: right;
+  width: 110rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  margin: 16rpx 0 0 10rpx;
+}
+.container > .list .item {
+  border-bottom: 1px solid #eeeeee;
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.container > .list .item > .lt {
+  width: 230rpx;
+  height: 200rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+.container > .list .item > .lt > image {
+  width: 100%;
+  height: 100%;
+}
+.container > .list .item > .rt {
+  width: 450rpx;
+  position: relative;
+  height: 200rpx;
+}
+.container > .list .item > .rt > .name {
+  font-weight: bold;
+  color: #000000;
+}
+.container > .list .item > .rt > .detail > view:nth-last-child(1) {
+  color: red;
+  font-size: 30rpx;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

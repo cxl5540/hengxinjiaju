@@ -1,0 +1,29 @@
+<view class="msg wh">
+
+  <view style="margin:30rpx 0;">请确认身份</view>
+  <van-radio-group value="{{ radio }}" bind:change="onChange">
+    <van-cell-group>
+      <van-cell title="普通用户" clickable data-name="2" style="text-align: left;" bind:click="onClick">
+        <van-radio slot="right-icon" name="2" />
+      </van-cell>
+      <van-cell title="维修人员" clickable style="text-align: left;" data-name="3" bind:click="onClick">
+        <van-radio slot="right-icon" name="3" />
+      </van-cell>
+    </van-cell-group>
+  </van-radio-group>
+  <view>
+    <van-cell-group >
+      <van-field
+        value="{{ value }}"
+        placeholder="请输入真实姓名(必填)"
+        border="{{ false }}"
+        bind:change="getname"
+      />
+</van-cell-group>
+  </view>
+ 
+
+  <view class="btn" bindtap="setpass">
+    <view class="wh" bindtap="back">确定</view>
+  </view>
+</view>

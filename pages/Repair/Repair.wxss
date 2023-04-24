@@ -1,0 +1,51 @@
+swiper {
+  height: 100vh;
+}
+.weui-tabs-bar__content {
+  display: flex;
+  justify-content: space-around;
+}
+.bold {
+  position: relative;
+}
+.bold::after {
+  content: '';
+  width: 8rpx;
+  height: 30rpx;
+  background: #0070C0;
+  position: absolute;
+  top: 10rpx;
+  left: 0;
+}
+.bold > text {
+  margin-left: 20rpx;
+}
+.edit > view {
+  display: flex;
+  justify-content: space-between;
+  margin: 10rpx 0;
+  align-items: center;
+}
+.edit > view > input {
+  width: 75%;
+  padding: 20rpx 10rpx;
+  background: #F5F5F5;
+}
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: #F5F5F5;
+  padding: 10rpx;
+  margin-bottom: 30rpx;
+}
+.btn {
+  margin: 30rpx 0;
+}
+.btn > view {
+  height: 72rpx;
+  background: #0070C0;
+  border-radius: 10rpx;
+  line-height: 72rpx;
+  color: #ffffff  ;
+  text-align: center;
+}

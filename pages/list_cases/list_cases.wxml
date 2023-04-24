@@ -1,0 +1,26 @@
+<!--pages/archives/archives.wxml-->
+<wxs src='../../tools.wxs' module="tools"></wxs>
+<view class="container wh">
+  <!-- <view class="hed">
+    <view class="search">
+
+    </view>
+  </view> -->
+  <view class="nav" style="height: 0rpx;">
+    <!-- <image src="../../image/gzt_img_grtj.png"></image>
+      <text class="bold">个人工资统计</text> -->
+  </view>
+  <view class="list">
+    <scroll-view scroll-y style="width: 100%; height:{{tabHeiaght}}px;" refresher-enabled="{{true}}" refresher-threshold="{{100}}" refresher-default-style="black" refresher-background="" refresher-triggered="{{triggered}}" bindrefresherpulling="onPulling" bindscrolltolower='scrollToLower' bindrefresherrefresh="onRefresh">
+      <view class="list case">
+      <view wx:for="{{list}}" wx:key="*this" data-url="{{item.imgs}}"bindtap="calse_detail">
+        <image  src="{{tools.img_online+item.cover}}"></image>
+        <view>{{item.name}}</view>
+      </view>
+  </view>
+      <view class='data-loading' style="text-align: center;">
+        {{is_data?'数据加载中...':'无更多数据...'}}
+      </view>
+    </scroll-view>
+  </view>
+</view>

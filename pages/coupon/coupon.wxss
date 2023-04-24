@@ -1,0 +1,64 @@
+swiper {
+  height: 100vh;
+}
+.weui-tabs-bar__content {
+  display: flex;
+  justify-content: space-around;
+}
+.list > view > view:nth-child(1) {
+  display: flex;
+  height: 150rpx;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30rpx;
+  background: rgba(255, 0, 0, 0.1);
+  border-radius: 10rpx;
+}
+.list > view > view:nth-child(1) > view:nth-child(1) {
+  width: 30%;
+  height: 100%;
+  position: relative;
+}
+.list > view > view:nth-child(1) > view:nth-child(1) > text:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  background: rgba(255, 0, 0, 0.2);
+  color: #FF4500;
+  padding: 0 10rpx;
+}
+.list > view > view:nth-child(1) > view:nth-child(1) > text:nth-child(2) {
+  font-size: 40rpx;
+  color: red;
+  font-weight: bold;
+  padding-left: 10rpx;
+  line-height: 150rpx;
+}
+.list > view > view:nth-child(1) > view:nth-child(2) {
+  width: 50%;
+}
+.list > view > view:nth-child(1) > view:nth-child(3) {
+  width: 20%;
+  text-align: center;
+  line-height: 150rpx;
+  height: 100%;
+  border-left: 1px dashed #eeeeee;
+}
+.list > view > view:nth-child(1) > view:nth-child(3) > text {
+  border: 1px solid red;
+  color: red;
+  padding: 8rpx 10rpx;
+  border-radius: 25rpx;
+}
+.list > view > view:nth-child(2) {
+  font-size: 24rpx;
+  color: #999999;
+  border: 1px solid #eeeeee;
+  border-top: none;
+  box-sizing: border-box;
+  padding: 10rpx;
+}
+.tran {
+  transform: rotate(180deg);
+}

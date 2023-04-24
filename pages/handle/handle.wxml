@@ -1,0 +1,73 @@
+<wxs src='../../tools.wxs' module="tools"></wxs>
+<view class="tab-content wh">
+  <view class="bold"><text style="margin-left: 20rpx;">问题反馈</text></view>
+  <view class="edit">
+    <view>
+      <text>姓名：</text>
+      <input value="{{question_info.name}}" disabled />
+    </view>
+    <view>
+      <text>手机：</text>
+      <input value="{{question_info.tel}}" disabled />
+    </view>
+    <view>
+      <text>地址：</text>
+      <input value="{{question_info.address}}" disabled />
+    </view>
+    <!-- <view>
+      <text>交易金额：</text>
+      <input value="￥{{question_info.sell_money}}" disabled />
+    </view> -->
+    <view>
+      <text>销售人：</text>
+      <input value="{{question_info.sell_person}}" disabled />
+    </view>
+    <view>
+      <text>销售时间：</text>
+      <input value="{{question_info.salesperson_time}}" disabled />
+    </view>
+  </view>
+  <view>
+    <view>图片预览：</view>
+    <view class="addImage">
+      <van-uploader file-list="{{ question_pic_url }}" accept="image" max-count="3" multiple deletable="{{ false }}" preview-size="{{(width+50)/4 }}" />
+    </view>
+  </view>
+  <view>
+    <view style="margin: 20rpx 0;">问题描述：</view>
+    <textarea value="{{question_info.describe}}" disabled></textarea>
+  </view>
+  <view wx:if="{{question_info.note}}">
+    <view class="bold"><text style="margin-left: 20rpx;">产品备注</text></view>
+    <rich-text nodes="{{question_info.note}}"></rich-text>
+  </view>
+</view>
+<view class="tab-content wh">
+ <view class="bold"><text style="margin-left: 20rpx;">售后反馈</text></view>
+  <view class="edit">
+    <view>
+      <text>售后状态：</text>
+      <input disabled type="text" value="{{status_type}}" placeholder="请选择处理状态" />
+      <picker style="position:absolute;right: 30rpx;z-index: 100;"  value="{{index}}" bindchange="change_type"  range="{{invoice_type_list}}">
+        选择
+      </picker>
+    </view>
+    <view>
+      <text>售后金额：</text>
+      <input bindinput="inputWacth" value="{{formData.money}}" data-model="money" type="digit" placeholder="请输入售后金额" type="number" />
+    </view>
+  </view>
+  <view>
+    <view>售后图片(必须上传3张)：</view>
+    <view class="addImage">
+      <van-uploader file-list="{{ fileList }}" accept="image" max-count="3" multiple bind:after-read="afterRead" bind:delete="delImg" bind:before-read="beforeRead" deletable="{{ true }}" preview-size="{{(width+50)/4 }}" />
+    </view>
+  </view>
+  <view>
+    <view style="margin: 20rpx 0;">售后备注：</view>
+    <textarea bindinput="inputWacth" value="{{formData.remarks}}" data-model="remarks" cols="30" rows="10" placeholder="请填写售后备注..."></textarea>
+  </view>
+  <view class="btn">
+    <view  bindtap="submit">提交</view>
+  </view>
+</view>

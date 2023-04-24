@@ -1,0 +1,91 @@
+.userinfo {
+  width: 100%;
+  height: 250rpx;
+  display: flex;
+  align-items: center;
+}
+.userinfo > view {
+  display: inline-block;
+}
+.userinfo .userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.userinfo .msg {
+  margin-left: 20rpx;
+}
+.userinfo .msg > view {
+  margin-top: 10rpx;
+}
+.userinfo .msg .v_del {
+  display: inline-block;
+  width: 180rpx;
+  height: 40rpx;
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  color: #3FB5A2;
+  font-size: 24rpx;
+  text-align: center;
+}
+.num {
+  box-shadow: 0px 0px 15rpx 0px rgba(40, 112, 105, 0.2);
+  display: flex;
+  justify-content: space-around;
+  padding: 20rpx 0;
+  border-radius: 10rpx;
+  margin-bottom: 60rpx;
+  background: #fff;
+}
+.num > view {
+  text-align: center;
+}
+.num > view > view {
+  color: var(--tc);
+}
+.num > view > view > text {
+  font-size: 44rpx;
+}
+.nume > view {
+  box-sizing: border-box;
+  padding: 20rpx 20rpx;
+}
+.nume > view > image {
+  width: 80rpx;
+  height: 80rpx;
+}
+.nume > view > view:nth-child(2) {
+  float: left;
+  width: 80%;
+}
+.nume > view > view:nth-child(2) > text {
+  font-size: 24rpx;
+  color: #999999;
+}
+.nume > .i_t {
+  border-bottom: 1px solid #eeeeee;
+}
+.nume button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100% !important;
+  height: 100%;
+  background: transparent;
+  color: transparent;
+}
+.nume > .msg {
+  z-index: 10;
+}
+.nume > .tel {
+  z-index: 9;
+}
+.coupon_btn {
+  background: #F19149;
+  color: #fff;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  position: absolute;
+  right: 20rpx;
+}

@@ -1,0 +1,167 @@
+{
+  "setting": {
+    "compileHotReLoad": true,
+    "urlCheck": false
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "str='2021,1;2021,3;2020,1'&sucessUp='3'&fialUp='1'",
+          "scene": null
+        },
+        {
+          "name": "列表",
+          "pathName": "pages/list/list",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "报修",
+          "pathName": "pages/Repair/Repair",
+          "query": "name=蔡雪莲&tel=13883005540",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "个人中心",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "维修",
+          "pathName": "pages/handle/handle",
+          "query": "id=1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的售后",
+          "pathName": "pages/list_user/list_user",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "选择身份",
+          "pathName": "pages/Select_user/Select_user",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "列表详情",
+          "pathName": "pages/detail/detail",
+          "query": "id=4",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "忘记密码",
+          "pathName": "pages/setpass_forget/setpass_forget",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "产品详情",
+          "pathName": "pages/product_detail/product_detail",
+          "query": "id=2",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "去密码登录",
+          "pathName": "pages/setpass_login/setpass_login",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "姓名登录",
+          "pathName": "pages/setname_login/setname_login",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "个人信息",
+          "pathName": "pages/info/info",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "优惠券",
+          "pathName": "pages/coupon/coupon",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "积分兑换",
+          "pathName": "pages/shop/shop",
+          "query": "id=2",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "积分详情",
+          "pathName": "pages/goods_del/goods_del",
+          "query": "id=2",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "兑换明细",
+          "pathName": "pages/money_list/money_list",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "vr",
+          "pathName": "pages/vr/vr",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "安利",
+          "pathName": "pages/list_case/list_case",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "产品列表",
+          "pathName": "pages/list_pro/list_pro",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "案列列表",
+          "pathName": "pages/list_cases/list_cases",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "积分列表",
+          "pathName": "pages/jf_list/jf_list",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "projectname": "fpcc_yg-master",
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "libVersion": "2.24.7"
+}

@@ -1,0 +1,30 @@
+<wxs src='../../tools.wxs' module="tools"></wxs>
+<ad-custom unit-id="adunit-1bf479293c2df033"></ad-custom>
+<view class="wh container">
+  <view class="list">
+          <scroll-view
+          scroll-y style="width: 100%; height:{{tabHeiaght}}px;"
+            refresher-enabled="{{true}}"
+            refresher-threshold="{{100}}"
+            refresher-default-style="black"
+            refresher-background=""
+            refresher-triggered="{{triggered}}"
+            bindscrolltolower='scrollToLower'
+            bindrefresherrefresh="onRefresh"
+      >
+            <view class="item" wx:for="{{list}}" wx:key="*this" data-id="{{item.id}}" bindtap="detail">            
+                 <view>
+                    <image src="{{tools.img_online+item.cover}}"></image>
+                 </view> 
+                 <view  style="height: 70rpx;">{{item.name}}</view>   
+                 <view style="color:#FF8C00;font-size: 24rpx;"><text style="font-size: 36rpx;">{{item.exchange_integral}}</text>积分</view>
+                 <view class="flex" style="font-size: 24rpx;color: #999999;"><text>库存{{item.quantity}}</text> <text>可兑次数{{item.exchange_sum}}</text> </view>
+            </view>
+                       
+            <view class='data-loading' style="text-align: center;height: 100rpx;">
+               {{is_data?'数据加载中...':'无更多数据...'}}
+            </view> 
+       </scroll-view>
+   </view>
+   <button class="msg" bindtap="getUserProfile" wx:if="{{!uid}}">授权</button>
+</view>

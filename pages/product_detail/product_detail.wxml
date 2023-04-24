@@ -1,0 +1,21 @@
+<wxs src='../../tools.wxs' module="tools"></wxs>
+<view class="swiper">
+    <swiper class="home-swiper" indicator-dots="{{false}}" autoplay="{{false}}" circular="true" current="{{swiperCurrent}}"  bindchange="swiperChange">
+      <block  bindchange="bindChange" wx:for="{{ product_info.cover}}" wx:key='*this'>
+        <swiper-item>
+          <image data-index="{{index}}"  bindtap="previewImage" src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+   
+    </swiper>
+    <view class="cont">{{swiperCurrent+1}}/{{ product_info.cover.length}}</view>
+</view>
+<view class="detail wh">
+  <view>
+    <text style="font-size: 24rpx;">最低零售价</text>
+    <view><text style="font-size: 24rpx;">￥</text> <text>{{product_info.price}}</text></view>
+  </view>
+  <view>{{product_info.name}}</view>
+  <rich-text nodes="{{product_info.specification}}"></rich-text>
+</view>
+

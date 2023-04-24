@@ -1,0 +1,184 @@
+.home-swiper {
+  margin: auto;
+  height: 300rpx;
+}
+.home-swiper .slide-image {
+  width: 100%;
+  height: 300rpx;
+}
+.home-swiper .wx-swiper-dot {
+  width: 30rpx;
+  height: 6rpx;
+  border-radius: 3rpx;
+}
+.bold {
+  position: relative;
+  font-size: 36rpx;
+  color: #F19149;
+  margin: 30rpx 0;
+}
+.bold > text {
+  display: inline-block;
+  color: #000000;
+  font-size: 28rpx;
+}
+.item {
+  border-bottom: 1px solid #eeeeee;
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.item > .lt {
+  width: 230rpx;
+  height: 200rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+.item > .lt > image {
+  width: 100%;
+  height: 100%;
+}
+.item > .rt {
+  width: 450rpx;
+  position: relative;
+  height: 200rpx;
+}
+.item > .rt > .name {
+  font-weight: bold;
+  color: #000000;
+}
+.item > .rt > .detail > view:nth-last-child(1) {
+  color: red;
+  font-size: 30rpx;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.weui-half-screen-dialog__hd {
+  display: none;
+}
+.case > view {
+  border-radius: 10rpx;
+  overflow: hidden;
+  display: inline-block;
+  width: 340rpx;
+  height: 240rpx;
+  margin-top: 10rpx;
+  position: relative;
+}
+.case > view > view {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  padding: 6rpx 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.case > view > image {
+  width: 100%;
+  height: 100%;
+}
+.case > view:nth-child(2n) {
+  float: right;
+}
+.tools > .lt,
+.tools > .rt {
+  position: relative;
+}
+.tools > .lt > button,
+.tools > .rt > button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: transparent;
+}
+.tools > .lt > .msg,
+.tools > .rt > .msg {
+  z-index: 10;
+}
+.tools > .lt > .tel,
+.tools > .rt > .tel {
+  z-index: 9;
+}
+.model {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+}
+.model > .main {
+  position: relative;
+  top: 100rpx;
+}
+.model > .main > image {
+  width: 100%;
+  height: 760rpx;
+}
+.model > .main > .content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  z-index: 10;
+  text-align: center;
+  color: #EB382C;
+}
+.model > .main > .content > view:nth-child(2) {
+  font-weight: bold;
+}
+.model > .main > .content > view:nth-child(2) > text {
+  font-size: 90rpx;
+}
+.model > .main > .content > view:nth-child(3) {
+  width: 328rpx;
+  height: 1px;
+  background: #CE3D2E;
+  margin: auto;
+}
+.model > .main > .content > view:nth-child(4),
+.model > .main > .content > view:nth-child(5) {
+  font-size: 22rpx;
+  margin-top: 10rpx;
+}
+.model > .main > .content > button {
+  width: 300rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: relative;
+  background-size: cover;
+  background: transparent;
+  margin-top: 120rpx;
+  left: 29%;
+  top: 15%;
+}
+.model > .main > .content > button > image,
+.model > .main > .content > button > text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.model > .main > .content > button > text {
+  font-weight: bold;
+  color: #EB382C;
+  font-size: 30rpx;
+  z-index: 10;
+}
+.model > .main > .content > image {
+  width: 64rpx;
+  height: 64rpx;
+  position: relative;
+  top: 200rpx;
+}

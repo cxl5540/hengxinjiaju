@@ -1,0 +1,93 @@
+<wxs src='../../tools.wxs' module="tools"></wxs>
+
+<view class="tab-content wh">
+  <view class="bold"><text style="margin-left: 20rpx;">问题反馈</text></view>
+  <view class="edit">
+    <view>
+      <text>姓名：</text>
+      <input value="{{question_info.name}}" disabled />
+    </view>
+    <view>
+      <text>手机：</text>
+      <input value="{{question_info.tel}}" disabled />
+    </view>
+    <view>
+      <text>地址：</text>
+      <input value="{{question_info.address}}" disabled />
+    </view>
+    <!-- <view>
+      <text>交易金额：</text>
+      <input value="￥{{question_info.sell_money}}" disabled />
+    </view> -->
+    <view>
+      <text>销售人：</text>
+      <input value="{{question_info.sell_person}}" disabled />
+    </view>
+    <view>
+      <text>销售时间：</text>
+      <input value="{{question_info.salesperson_time}}" disabled />
+    </view>
+  </view>
+  <view>
+    <view>图片预览：</view>
+    <view class="addImage">
+      <van-uploader file-list="{{ question_pic_url }}" accept="image" max-count="3" multiple deletable="{{ false }}" preview-size="{{(width+50)/4 }}" />
+    </view>
+  </view>
+  <view>
+    <view style="margin: 20rpx 0;">问题描述：</view>
+    <textarea value="{{question_info.describe}}" disabled></textarea>
+  </view>
+</view>
+<view class="tab-content wh" wx:if="{{question_info.note&&question_info.user_type==3}}">
+    <view class="bold"><text style="margin-left: 20rpx;">产品备注</text></view>
+    <rich-text nodes="{{question_info.note}}"></rich-text>
+  </view>
+<view class="tab-content wh" wx:if="{{question_info.status!=1}}">
+  <view class="bold"><text style="margin-left: 20rpx;">售后反馈</text></view>
+  <view class="edit">
+    <view>
+      <text>售后状态：</text>
+      <input value="{{question_info.status==2?'已处理':'无法处理'}}" disabled />
+    </view>
+    <view>
+      <text>售后金额：</text>
+      <input value="{{question_info.money}}" disabled />
+    </view>
+    <view>
+      <text>处理人：</text>
+      <input value="{{question_info.operate_name}}" disabled />
+    </view>
+    <view>
+      <text>处理时间：</text>
+      <input value="{{question_info.update_time}}" disabled />
+    </view>
+  </view>
+  <view>
+    <view>图片预览：</view>
+    <van-uploader file-list="{{ after_sales_pic_url }}" accept="image" max-count="3" multiple deletable="{{ false }}" preview-size="{{(width+50)/4 }}" />
+  </view>
+  <view>
+    <view style="margin: 20rpx 0;">售后备注：</view>
+    <textarea value="{{question_info.remarks}}" disabled></textarea>
+  </view>
+</view>
+<view class="tab-content wh" wx:if="{{question_info.is_appraise==1&&question_info.user_type==2&&question_info.status!=1}}">
+  <view class="bold"><text style="margin-left: 20rpx;">售后评价</text></view>
+  <van-rate value="{{ value }}" size="{{ 25 }}" color="#ffd21e" void-icon="star" void-color="#eee" bind:change="onChange" />
+  <view>
+    <view style="margin: 20rpx 0;">请输入售后评价：</view>
+    <textarea bindinput="inputWacth" value="{{appraise_content}}" placeholder="请说说对此次处理的看法吧..." maxlength="250"></textarea>
+  </view>
+  <view class="btn">
+    <view  bindtap="back" bindtap="submit">提交</view>
+  </view>
+</view>
+<view class="tab-content wh" wx:if="{{question_info.is_appraise==2}}">
+  <view class="bold"><text style="margin-left: 20rpx;">售后评价</text></view>
+  <van-rate readonly   value="{{ question_info.star_rating }}" size="{{ 25 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+  <view>
+    <view style="margin: 20rpx 0;">售后评价：</view>
+    <textarea disabled value="{{question_info.appraise_content}}"></textarea>
+  </view>
+</view>

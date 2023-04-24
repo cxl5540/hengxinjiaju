@@ -1,0 +1,57 @@
+<wxs src='../../tools.wxs' module="tools"></wxs>
+<view class="container wh">
+    <!-- <swiper class="home-swiper" indicator-dots="true" autoplay="false" interval="5000" duration="1000" circular="true" indicator-active-color='#FFFFFF' indicator-color='rgba(255,255,255,.5)'>
+      <block wx:for="{{imgList}}" wx:key='*this'>
+        <swiper-item>
+          <image  src="{{item.url}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper> -->
+</view>
+<view class="container wh">
+  <view class='bold'>邻居案列<text></text> </view>
+  <view class="list case">
+      <view wx:for="{{4}}">
+        <image bindtap="govr" src="{{tools.img+'jiaju1.jpeg'}}"></image>
+      </view>
+  </view>
+</view>
+<view class="container wh">
+  <view class='bold'>产品展示<text>(点击图片预览大图)</text> </view>
+  <view class="item" wx:for="{{product_list}}" wx:key='*this'>
+    <view class="name">{{item.name}} <text>￥{{item.price}}</text> <text style="color: #999;font-size: 24rpx;"> (最低零售价)</text></view>
+    <!-- <swiper class="home-swiper" indicator-dots="true" autoplay="false" interval="5000" duration="1000" circular="true" indicator-active-color='#FFFFFF' indicator-color='rgba(255,255,255,.5)'>
+      <block wx:for="{{item.cover}}" wx:for-item="i" wx:key='*this'>
+        <swiper-item>
+          <image data-cover="{{item.cover}}" data-index="{{index}}" bindtap="previewImage" src="{{tools.img_online+i}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper> -->
+    <scroll-view scroll-x="true" scroll-with-animation="true" enable-flex="true" class="scroll-view">
+      <view wx:for="{{item.cover}}" wx:for-item="i" wx:key='*this'>
+        <image data-cover="{{item.cover}}" data-index="{{index}}" bindtap="previewImage" src="{{tools.img_online+i}}" class="slide-image" />
+      </view>
+    </scroll-view>
+
+    <view>
+      <!-- <view style="margin: 10rpx 0;font-size: 30rpx;"><text>产品简介</text></view> -->
+      <rich-text style="font-size: 24rpx;" nodes="{{item.explain}}"></rich-text>
+    </view>
+  </view>
+</view>
+<view class="model" wx:if="{{show}}">
+    <view class="main">
+          <!-- <image src="{{tools.img+'img_hongbao.png'}}"></image> -->
+          <image src="{{tools.img+'img_hongbao.png'}}"></image>
+          <view class="content">
+             <view>恭喜您成功领取</view>
+             <view>¥<text>{{price}}</text></view>
+             <view></view>
+             <view>优惠券码:{{key}}</view>
+             <view>详情见个人中心优惠券</view>
+             <button> <image  src="{{tools.img+'img_anniu.png'}}" alt=""/> <text  bindtap="mine">进入个人中心</text></button>
+             <image bindtap="close"  src="{{tools.img+'icon_guanbi.png'}}" alt=""/> 
+          </view> 
+    </view>
+</view>
+<!-- <view class="molde">qq</view> -->

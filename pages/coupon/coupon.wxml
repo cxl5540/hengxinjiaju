@@ -1,0 +1,74 @@
+<wxs src='../../tools.wxs' module="tools"></wxs>
+<mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" activeClass="tab-bar-title__selected">
+  <block wx:for="{{tabs}}" wx:key="title">
+    <view class="tab-content wh" wx:if="index==0" slot="tab-content-{{index}}">
+      <view class="list" wx:if="{{activeTab==0}}">
+        <view wx:for="{{list_1}}" wx:key="*this">
+          <view>
+            <view>
+              <text style="font-size: 24rpx;">券码:<text class="bold">{{item.key}}</text> </text>
+              <text>￥{{item.price}}</text>
+            </view>
+            <view>
+              <text>{{item.name}}</text>
+              <view style="color: #999999;font-size: 24rpx;color:#FF6347;">截止日期{{item.expiration_time}}</view>
+              <view style="color: #999999;font-size: 24rpx;" data-index="{{index}}" bindtap="getrules">使用规则 <image class="{{item.show?'tran':''}}" style="width: 18rpx;height: 10rpx;vertical-align:middle;" src="{{tools.img+'gzt_icon_xl.png'}}"></image> </view>
+            </view>
+            <view style="position: relative;">
+              <text style="font-size: 24rpx;" data-key="{{item.key}}" bindtap="sharecode">{{item.is_exchange==1?'分享券码':'已领取'}}</text>
+              <button wx:if="{{item.is_exchange==1}}" data-id="{{item.id}}" data-key="{{item.key}}" data-price="{{item.price}}" style="position: absolute;top: 0;left: 0;height: 100%;opacity: 0;" open-type='share'>分享</button>
+            </view>
+          </view>
+          <view wx:if="{{item.show}}">
+            <rich-text nodes="{{item.brief}}"></rich-text>
+          </view>
+        </view>
+        <view wx:if="{{!list_1.lenth}}" style="text-align: center;margin-top: 10px;">暂无更多数据 </view>
+      </view>
+      <view class="list" wx:if="{{activeTab==1}}">
+        <view wx:for="{{list_2}}" wx:key="*this" style="background: #dfdfdf;">
+          <view>
+            <view>
+              <text style="color: #999999;background: #cfcfcf;font-size: 24rpx;">券码:<text class="bold">{{item.key}}</text> </text>
+              <text style="color: #999999;">￥{{item.price}}</text>
+            </view>
+            <view>
+              <text>{{item.name}}</text>
+              <view style="color: #999999;font-size: 24rpx;">截止日期{{item.expiration_time}}</view>
+              <view style="color: #999999;font-size: 24rpx;" data-index="{{index}}" bindtap="getrules1">使用规则 <image class="{{item.show?'tran':''}}" style="width: 18rpx;height: 10rpx;vertical-align:middle;" src="{{tools.img+'gzt_icon_xl.png'}}"></image> </view>
+            </view>
+            <view>
+              <text data-key="{{item.key}}" style="border: none;color: #999999;font-size: 24rpx;">已使用</text>
+            </view>
+          </view>
+          <view wx:if="{{item.show}}" style="background:#FFFFFF;">
+            <rich-text nodes="{{item.brief}}"></rich-text>
+          </view>
+        </view>
+        <view wx:if="{{!list_2.lenth}}" style="text-align: center;margin-top: 10px;">暂无更多数据 </view>
+      </view>
+      <view class="list" wx:if="{{activeTab==2}}">
+        <view wx:for="{{list_3}}" wx:key="*this" style="background: #dfdfdf;">
+          <view>
+            <view>
+              <text style="color: #999999;background: #cfcfcf;font-size: 24rpx;">券码:<text class="bold">{{item.key}}</text> </text>
+              <text style="color: #999999;">￥{{item.price}}</text>
+            </view>
+            <view>
+              <text>{{item.name}}</text>
+              <view style="color: #999999;font-size: 24rpx;">截止日期{{item.expiration_time}}</view>
+              <view style="color: #999999;font-size: 24rpx;" data-index="{{index}}" bindtap="getrules2">使用规则 <image class="{{item.show?'tran':''}}" style="width: 18rpx;height: 10rpx;vertical-align:middle;" src="{{tools.img+'gzt_icon_xl.png'}}"></image> </view>
+            </view>
+            <view>
+              <text data-key="{{item.key}}" style="border: none;color: #999999;font-size: 24rpx;">已过期</text>
+            </view>
+          </view>
+          <view wx:if="{{item.show}}" style="background:#FFFFFF;">
+            <rich-text nodes="{{item.brief}}"></rich-text>
+          </view>
+        </view>
+        <view wx:if="{{!list_3.lenth}}" style="text-align: center;margin-top: 10px;">暂无更多数据 </view>
+      </view>
+    </view>
+  </block>
+</mp-tabs>

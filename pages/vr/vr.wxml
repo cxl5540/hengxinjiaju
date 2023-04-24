@@ -1,0 +1,8 @@
+<!--pages/vr/vr.wxml-->
+<wxs src='../../tools.wxs' module="tools"></wxs>
+<!-- <web-view src="{{url}}"></web-view> -->
+
+<view wx:for="{{url}}" wx:key="*this" style="text-align: center;"  data-index="{{index}}"  bindtap="previewImage" >
+    <image mode="widthFix" src="{{item}}"></image>
+</view>
+

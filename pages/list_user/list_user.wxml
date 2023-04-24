@@ -1,0 +1,60 @@
+<!--pages/archives/archives.wxml-->
+<wxs src='../../tools.wxs'  module="tools"></wxs>
+<view class="container wh">
+   <view class="hed" style="display: none;">
+      <view class="search">
+          <!-- <view>
+            <picker  bindchange="choose_date" fields='year'  value="{{input_time}}" mode='date' >
+            <view class="picker">
+              {{input_time}}<image style="margin-left: 10rpx;" src="{{tools.img+'gzt_icon_xl.png'}}"></image>
+            </view>
+          </picker>
+        </view>  -->
+        <!-- <view>
+            <picker  bindchange="change_type"   value="{{index}}" data-type="{{cityArray.name}}" mode='selector'  range-key="{{'name'}}"  range="{{cityArray}}" >
+            <view class="picker">
+              {{type}}<image style="margin-left: 10rpx;" src="{{tools.img+'gzt_icon_xl.png'}}"></image>
+            </view>
+          </picker>
+        </view>  -->
+        <!-- <view>
+          <picker  bindchange="change_Salarytype"   value="{{index}}" mode='selector'  range-key="{{'salaryName'}}"  range="{{Salarylist}}" >
+            <view class="picker">
+              {{Salary_type}}<image style="margin-left: 10rpx;" src="{{tools.img+'gzt_icon_xl.png'}}"></image>
+            </view>
+          </picker>
+        </view>     -->
+      </view>
+   </view>
+    <view class="nav" style="height: 0rpx;">
+      <!-- <image src="../../image/gzt_img_grtj.png"></image>
+      <text class="bold">个人工资统计</text> -->
+    </view>
+      <view class="list">
+          <scroll-view
+            scroll-y style="width: 100%; height:{{tabHeiaght}}px;"
+            refresher-enabled="{{true}}"
+            refresher-threshold="{{100}}"
+            refresher-default-style="black"
+            refresher-background=""
+            refresher-triggered="{{triggered}}"
+            bindrefresherpulling="onPulling"
+            bindscrolltolower='scrollToLower'
+            bindrefresherrefresh="onRefresh"
+      >
+            <view class="item" wx:for="{{list}}" data-active="{{active}}" wx:key="index" >
+              <view >
+                  <text class="bold" style="color: red;">￥{{item.sell_money}}</text> 
+                  <view wx:if="{{item.is_appraise==2}}" class="checkStatus" style="background:#FFA500;color: #fff;">已评价</view>         
+                  <view class="checkStatus" bindtap="getdetail" data-id="{{item.id}}" style="color: #0082dc;border: 1px solid #0082dc;">编辑售后</view>
+              </view>
+              <view>联系人： <text  style="margin-left:10rpx;">{{item.name}} {{item.tel}}</text></view>
+              <view>销售人： <text  style="margin-left:10rpx;">{{item.sell_person}}</text></view>
+              <view>交易时间：{{item.sell_time}}</view>
+            </view>
+            <view class='data-loading' style="text-align: center;">
+               {{is_data?'数据加载中...':'无更多数据...'}} 
+            </view>
+       </scroll-view>
+   </view>
+</view>

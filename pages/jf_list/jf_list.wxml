@@ -1,0 +1,37 @@
+<!-- <view class="hed flex">
+      <text>当前累计收益：{{type==1?user_info.money_count:user_info.gold_count}} {{type==1?'元':'个'}}</text>
+  </view> -->
+<view class="container wh">
+  <view class="list">
+          <scroll-view
+          scroll-y style="width: 100%; height:{{tabHeiaght}}px;"
+            refresher-enabled="{{true}}"
+            refresher-threshold="{{100}}"
+            refresher-default-style="black"
+            refresher-background=""
+            refresher-triggered="{{triggered}}"
+            bindscrolltolower='scrollToLower'
+            bindrefresherrefresh="onRefresh"
+      >
+            <view class="item" wx:for="{{list}}" wx:key="*this">    
+              <view class="flex">
+                  <text>{{item.type==1?'购买商品':item.type==2?'商品兑换':'推广引流'}}</text>          
+                  <text style="{{item.type==2?'color:green':'color:red'}}">{{item.type==2?'-':'+'}}  {{item.score}}</text>
+              </view> 
+                      
+              <view wx:if="{{item.type==3}}">
+                  <!-- <text>兑换码：<text class="bold" style="font-size: 30rpx;">{{item.order_code}}</text> </text>           -->
+                  <text>推广客户：{{item.pid_name}} {{item.pid_tel}}</text>
+              </view>
+              <view class="flex" style="margin-top: 10rpx;">
+                  <text style="color: #999999;">时间：{{item.create_time}}</text>          
+                  <!-- <text class="bold" style="font-size: 30rpx;">积分：{{item.order_integral}}</text> -->
+              </view>
+              <view wx:if="{{item.explain}}" style="color: #999999;">备注:{{item.explain}}</view>    
+            </view>
+            <view class='data-loading' style="text-align: center;">
+               {{is_data?'数据加载中...':'无更多数据...'}} 
+            </view> 
+       </scroll-view>
+   </view>
+</view>

@@ -1,0 +1,14 @@
+<wxs src='../../tools.wxs' module="tools"></wxs>
+<view class="container wh">
+  <view class="pics" style="text-align: center;">
+    <!-- <rich-text nodes="{{commodity_info.detail}}"></rich-text> -->
+    <image wx:if="{{goods_info.cover}}"  mode="widthFix"  src="{{tools.img_online+goods_info.cover}}"></image>
+  </view>
+
+
+
+</view>
+<view class="concat flex">
+  <!-- <button open-type="contact">在线客服</button> -->
+  <button bindtap="submit">消耗<text>{{goods_info.exchange_integral}}</text>积分 立即兑换</button>
+</view>

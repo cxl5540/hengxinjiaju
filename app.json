@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/Repair/Repair",
+    "pages/mine/mine",
+    "pages/list/list",
+    "components/picker/Picker",
+    "pages/handle/handle",
+    "pages/list_user/list_user",
+    "pages/Select_user/Select_user",
+    "pages/detail/detail",
+    "pages/product_detail/product_detail",
+    "pages/shop/shop",
+    "pages/coupon/coupon",
+    "pages/goods_del/goods_del",
+    "pages/money_list/money_list",
+    "pages/list_case/list_case",
+    "pages/list_pro/list_pro",
+    "pages/list_cases/list_cases", 
+    "pages/jf_list/jf_list",  
+    "pages/vr/vr"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "tabBar": {
+    "selectedColor": "#F19149",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/h.png",
+        "selectedIconPath": "image/h1.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心",
+        "iconPath": "image/nav_mine_d@2x.png",
+        "selectedIconPath": "image/nav_mine_s@2x.png"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx78cd18d3fd086861"
+  ]
+}

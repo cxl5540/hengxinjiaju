@@ -1,0 +1,51 @@
+<wxs src='../../tools.wxs' module="tools"></wxs>
+<view class="container wh">
+    <swiper class="home-swiper" indicator-dots="true" autoplay="false" interval="5000" duration="1000" circular="true" indicator-active-color='#FFFFFF' indicator-color='rgba(255,255,255,.5)'>
+      <block wx:for="{{imgList}}" wx:key='*this'>
+        <swiper-item>
+          <image  src="{{tools.img+item.url}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+</view>
+<view class="container wh">
+  <view class='bold'>邻居案列<text style="float: right;"  bindtap="getcase_list">更多>></text> </view>
+  <view class="list case">
+      <view wx:for="{{case_list}}" wx:key="*this" data-url="{{item.imgs}}" bindtap="calse_detail">
+        <image  src="{{tools.img_online+item.cover}}"></image>
+        <view>{{item.name}}</view>
+      </view>
+   
+  </view>
+</view>
+<view class="container wh">
+  <view class='bold'>产品展示<text style="float: right;"  bindtap="getpro_list">更多>></text></view>
+  <view class="item" wx:for="{{product_list}}" wx:key='*this' data-id="{{item.id}}" bindtap="pro_detail">
+      <view class="lt">
+        <image src="{{tools.img_online+item.cover[0]}}"></image>
+      </view>
+      <view class="rt">
+          <view class="name">{{tools.getstr(item.name,14)}}</view>
+          <view class="detail">
+           <rich-text style="font-size: 24rpx;color: #999;" nodes="{{item.explain}}"></rich-text>
+           <view><text style="font-size: 24rpx;">￥</text>{{item.price}}</view>
+          </view>
+      </view>
+  </view>
+</view>
+<view class="model" wx:if="{{show}}">
+    <view class="main">
+          <!-- <image src="{{tools.img+'img_hongbao.png'}}"></image> -->
+          <image src="{{tools.img+'img_hongbao.png'}}"></image>
+          <view class="content">
+             <view>恭喜您成功领取</view>
+             <view>¥<text>{{price}}</text></view>
+             <view></view>
+             <view>优惠券码:{{key}}</view>
+             <view>详情见个人中心优惠券</view>
+             <button> <image  src="{{tools.img+'img_anniu.png'}}" alt=""/> <text  bindtap="mine">进入个人中心</text></button>
+             <image bindtap="close"  src="{{tools.img+'icon_guanbi.png'}}" alt=""/> 
+          </view> 
+    </view>
+</view>
+<!-- <view class="molde">qq</view> -->
