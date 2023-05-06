@@ -21,6 +21,16 @@ Page({
       value: event.detail,
     });
   },
+  callphone(){//联系电话
+    wx.makePhoneCall({
+      phoneNumber:this.data.question_info.tel, 
+      success: function() { 
+      },
+      
+      fail: function() {
+      }
+      })
+  },
   getdata(){
     http.question_detail({
       data:{

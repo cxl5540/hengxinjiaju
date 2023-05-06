@@ -28,6 +28,7 @@ Page({
       },
       success: res => {
         if(res.code=='200'){
+          res.data.product_info.specification =res.data.product_info.specification.replace(/\<img/gi, '<img class="richImg" style="max-width:100%" ');
           var product_info=res.data.product_info;
           product_info.cover=JSON.parse(product_info.cover);
           for(var i=0;i<product_info.cover.length;i++){

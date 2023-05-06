@@ -139,6 +139,25 @@ Page({
       formData:formData
       }); 
   },
+  callphone(){//联系电话
+    wx.makePhoneCall({
+      phoneNumber:this.data.question_info.sell_tel, 
+      success: function() { 
+      },
+      
+      fail: function() {
+      }
+      })
+  },
+  callphone_yh(){
+    wx.makePhoneCall({
+      phoneNumber:this.data.question_info.tel, 
+      success: function() { 
+      },
+      fail: function() {
+      }
+      })
+  },
   submit(){ //提交
     for(var i in this.data.formData){
       if(!this.data.formData[i]){

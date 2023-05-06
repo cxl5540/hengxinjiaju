@@ -6,9 +6,10 @@
       <text>姓名：</text>
       <input value="{{question_info.name}}" disabled />
     </view>
-    <view>
+    <view  style="position: relative;">
       <text>手机：</text>
       <input value="{{question_info.tel}}" disabled />
+      <text style="position: absolute;right: 0;color: #3B7AFF;z-index: 100;" catchtap="callphone_yh">立即拨打</text>
     </view>
     <view>
       <text>地址：</text>
@@ -22,9 +23,14 @@
       <text>销售人：</text>
       <input value="{{question_info.sell_person}}" disabled />
     </view>
+    <view style="position: relative;">  
+      <text>销售电话：</text>
+      <input  disabled value="{{question_info.sell_tel}}"  />
+      <!-- <text style="position: absolute;right: 0;color: #3B7AFF;z-index: 100;" catchtap="callphone">立即拨打</text> -->
+    </view>
     <view>
       <text>销售时间：</text>
-      <input value="{{question_info.salesperson_time}}" disabled />
+      <input value="{{question_info.sell_time}}" disabled />
     </view>
   </view>
   <view>
@@ -34,11 +40,11 @@
     </view>
   </view>
   <view>
-    <view style="margin: 20rpx 0;">问题描述：</view>
+    <view style="margin: 20rpx 0;">客户描述：</view>
     <textarea value="{{question_info.describe}}" disabled></textarea>
   </view>
   <view wx:if="{{question_info.note}}">
-    <view class="bold"><text style="margin-left: 20rpx;">产品备注</text></view>
+    <view class="bold"><text style="margin-left: 20rpx;">客户详情</text></view>
     <rich-text nodes="{{question_info.note}}"></rich-text>
   </view>
 </view>

@@ -42,3 +42,7 @@ page {
   margin-bottom: 20rpx;
   margin-top: 40rpx;
 }
+.richImg {
+  max-width: 100% !important;
+  width: 100% !important;
+}

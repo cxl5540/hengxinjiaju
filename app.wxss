@@ -10,6 +10,10 @@ page{
   --f_s:28rpx;
  
 }
+#richImg{
+  max-width: 100% !important;
+  width: 100% !important;
+}
 .box-line{
   box-shadow: 0px 0px 15rpx 0px rgba(40, 112, 105, 0.15);
   border-radius: 10rpx;

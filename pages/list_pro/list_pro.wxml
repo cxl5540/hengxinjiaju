@@ -17,9 +17,9 @@
           <image src="{{tools.img_online+item.cover[0]}}"></image>
         </view>
         <view class="rt">
-          <view class="name">{{tools.getstr(item.name,10)}}</view>
+          <view class="name">{{item.name}}</view>
           <view class="detail">
-            <rich-text style="font-size: 24rpx;color: #999;" nodes="{{item.explain}}"></rich-text>
+            <!-- <rich-text style="font-size: 24rpx;color: #999;" nodes="{{item.explain}}"></rich-text> -->
             <view><text style="font-size: 24rpx;">￥</text>{{item.price}}</view>
           </view>
         </view>

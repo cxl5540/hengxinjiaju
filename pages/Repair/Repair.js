@@ -130,6 +130,16 @@ Page({
       }); 
       console.log(this.data.formData)
   },
+  callphone(){//联系电话
+    wx.makePhoneCall({
+      phoneNumber:this.data.question_info.tel, 
+      success: function() { 
+      },
+      
+      fail: function() {
+      }
+      })
+  },
   submit(){ //提交
     if(this.data.picLlist.length!==3){
       wx.showToast({
@@ -142,7 +152,9 @@ Page({
       data:{
         name:this.data.question_info.name,
         tel:this.data.question_info.tel,
-        salesperson:this.data.question_info.salesperson?this.data.question_info.salesperson:'',
+        sell_person:this.data.question_info.sell_person?this.data.question_info.sell_person:'',
+        sell_tel:this.data.question_info.sell_tel?this.data.question_info.sell_tel:'',
+        sell_time:this.data.question_info.sell_time?this.data.question_info.sell_time:'',
         address:this.data.question_info.address?this.data.question_info.address:'',
         describe:this.data.formData.content,
         uid:wx.getStorageSync('uid'),

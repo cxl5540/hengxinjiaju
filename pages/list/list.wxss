@@ -74,6 +74,8 @@
   background: rgba(237, 237, 237, 0.6);
   height: 80rpx;
   line-height: 80rpx;
+  display: flex;
+  justify-content: space-between;
 }
 .container > .list .item > view:nth-child(2),
 .container > .list .item > view:nth-child(3),

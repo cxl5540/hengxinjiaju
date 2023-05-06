@@ -14,21 +14,26 @@
       <text>手机：</text>
       <input disabled value="{{question_info.tel}}"  />
     </view>
+    <view>
+      <text>地址：</text>
+      <input bindinput="inputWacth"  value="{{question_info.address}}" disabled />
+    </view>
     <!-- <view>
       <text>交易金额：</text>
       <input disabled value="￥{{question_info.sell_money}}"  />
     </view> -->
     <view>
       <text>销售人：</text>
-      <input  disabled value="{{question_info.salesperson?question_info.salesperson:'无'}}"  />
+      <input  disabled value="{{question_info.sell_person}}"  />
+    </view>
+    <view style="position: relative;">  
+      <text>销售电话：</text>
+      <input  disabled value="{{question_info.sell_tel}}"  />
+      <!-- <text style="position: absolute;right: 0;color: #3B7AFF;z-index: 100;" catchtap="callphone">立即拨打</text> -->
     </view>
     <view>
       <text>销售时间：</text>
-      <input  disabled value="{{question_info.salesperson_time}}"  />
-    </view>
-    <view>
-      <text>地址：</text>
-      <input bindinput="inputWacth"  value="{{question_info.address}}" disabled />
+      <input  disabled value="{{question_info.sell_time}}"  />
     </view>
   </view>
   <view>
